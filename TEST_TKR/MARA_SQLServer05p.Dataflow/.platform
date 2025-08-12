@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "MARA_SQLServer05p"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1b240be9-95d2-bbc2-4527-441544a97baa"
+  }
+}

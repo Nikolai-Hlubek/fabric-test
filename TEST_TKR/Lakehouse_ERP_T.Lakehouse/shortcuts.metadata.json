@@ -1,0 +1,110 @@
+[
+  {
+    "name": "transformed",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/transformed"
+      }
+    }
+  },
+  {
+    "name": "stg_opportunityclose",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/transformed/stg_opportunityclose"
+      }
+    }
+  },
+  {
+    "name": "stg_opportunity",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/transformed/stg_opportunity"
+      }
+    }
+  },
+  {
+    "name": "stg_burkert_opportunityclose",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/transformed/stg_burkert_opportunityclose"
+      }
+    }
+  },
+  {
+    "name": "production",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/transformed/production"
+      }
+    }
+  },
+  {
+    "name": "P2P_EKPO",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/transformed/P2P_EKPO"
+      }
+    }
+  },
+  {
+    "name": "P2P_EKKO",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/transformed/P2P_EKKO"
+      }
+    }
+  },
+  {
+    "name": "OM_OPPORTUNITY",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/transformed/OM_OPPORTUNITY"
+      }
+    }
+  },
+  {
+    "name": "erp-t",
+    "path": "/Tables",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "c333b221-831b-4296-99d3-753364d970d4",
+        "location": "https://stxtrbukneu001.dfs.core.windows.net",
+        "subpath": "/erp-t"
+      }
+    }
+  }
+]

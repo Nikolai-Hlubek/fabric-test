@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "MARA_SQLServer05p",
+  "queryGroups": [],
+  "documentLocale": "de-DE",
+  "gatewayObjectId": "e11f6926-4e42-4b70-bb90-17d20dfd6314",
+  "queriesMetadata": {
+    "T_STG_SAP_MARA": {
+      "queryId": "a6dd6fa6-0487-40a2-9063-e0bff164fb8a",
+      "queryName": "T_STG_SAP_MARA",
+      "loadEnabled": false
+    },
+    "T_STG_SAP_MARA_DataDestination": {
+      "queryId": "dd9fb7d1-a525-4e0a-abf5-61a64a3e7be1",
+      "queryName": "T_STG_SAP_MARA_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "deingsql05p.local.burkert.com;DATALAKE",
+      "kind": "SQL",
+      "connectionId": "{\"ClusterId\":\"e11f6926-4e42-4b70-bb90-17d20dfd6314\",\"DatasourceId\":\"236ba277-4eb1-4dd4-9517-772de97de384\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"e11f6926-4e42-4b70-bb90-17d20dfd6314\",\"DatasourceId\":\"487453ce-dbc9-48a6-9503-b8f7d809d685\"}"
+    }
+  ]
+}

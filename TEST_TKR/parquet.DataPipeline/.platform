@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "parquet"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4ec1d17c-9576-9177-4243-d9eb4b54ee83"
+  }
+}

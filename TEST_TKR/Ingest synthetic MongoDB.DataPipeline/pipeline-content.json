@@ -1,0 +1,221 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy_cdm",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "MongoDbAtlasSource",
+            "batchSize": 100,
+            "datasetSettings": {
+              "annotations": [],
+              "type": "MongoDbAtlasCollection",
+              "schema": [],
+              "typeProperties": {
+                "collection": "production_data_100k",
+                "database": "sample_production_data"
+              },
+              "version": "1.1",
+              "externalReferences": {
+                "connection": "ee6a79bc-12bc-4ced-83be-a5520c3d486f"
+              }
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "linkedService": {
+                "name": "DataflowsStagingLakehouse",
+                "properties": {
+                  "annotations": [],
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "workspaceId": "e58a04c9-b9e4-44cb-b315-07569b01fee4",
+                    "artifactId": "ad6dd9c3-0e0c-4bbd-9442-61181ec77aed",
+                    "rootFolder": "Tables"
+                  }
+                }
+              },
+              "type": "LakehouseTable",
+              "schema": [],
+              "typeProperties": {
+                "table": "production_data_100k"
+              }
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "_id.$oid",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "_id.$oid",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "part_id",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "part_id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.step_index",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "steps.step_index",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "steps.name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.ts",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "steps.ts",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.duration",
+                  "type": "Int64"
+                },
+                "sink": {
+                  "name": "steps.duration",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.evaluation",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "steps.evaluation",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.measurements.name",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "steps.measurements.name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.measurements.value",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "steps.measurements.value",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.measurements.unit",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "steps.measurements.unit",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.measurements.limits.lower",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "steps.measurements.limits.lower",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "steps.measurements.limits.upper",
+                  "type": "Double"
+                },
+                "sink": {
+                  "name": "steps.measurements.limits.upper",
+                  "physicalType": "double"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          }
+        }
+      },
+      {
+        "name": "Calc rolling mean",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "Copy_cdm",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "4f108bc1-a809-4a7c-ad79-4ee45611a104",
+          "workspaceId": "2655baca-93c7-498c-b7e7-ab280276fbe2"
+        }
+      }
+    ]
+  }
+}

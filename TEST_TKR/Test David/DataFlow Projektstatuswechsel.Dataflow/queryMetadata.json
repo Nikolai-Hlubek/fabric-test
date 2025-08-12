@@ -1,0 +1,32 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow 2",
+  "queryGroups": [],
+  "documentLocale": "de-DE",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "14b96d94-45fe-4d7f-8da4-42d2b139cd81",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Projektstatuswechsel xlsx": {
+      "queryId": "20bcd50f-64ee-4eb8-a4d1-703c603de7f2",
+      "queryName": "Projektstatuswechsel xlsx",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"cc8882f3-06dd-487b-b6ed-a7012e303005\",\"DatasourceId\":\"3fe5f3ac-cda5-435c-9196-c54b05794f38\"}"
+    },
+    {
+      "path": "https://burkert-my.sharepoint.com/personal/david_duong_burkert_com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"cc8882f3-06dd-487b-b6ed-a7012e303005\",\"DatasourceId\":\"f70d514c-9ab7-4f2c-a028-f3305d276193\"}"
+    }
+  ]
+}

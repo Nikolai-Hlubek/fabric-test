@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "DataFlow Projektstatuswechsel"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "db0745f4-46d7-899f-40c9-7b6629dac5d1"
+  }
+}
