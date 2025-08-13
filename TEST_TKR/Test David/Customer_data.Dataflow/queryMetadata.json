@@ -1,0 +1,32 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Customer_data",
+  "queryGroups": [],
+  "documentLocale": "de-DE",
+  "queriesMetadata": {
+    "dimension_customer 1": {
+      "queryId": "6516a73f-ac48-4726-b4c3-5e22c8c970b0",
+      "queryName": "dimension_customer 1",
+      "loadEnabled": false
+    },
+    "dimension_customer 1_DataDestination": {
+      "queryId": "3863da2f-dd75-47d6-8571-cf4dfe7d574a",
+      "queryName": "dimension_customer 1_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://burkert-my.sharepoint.com/personal/david_duong_burkert_com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"cc8882f3-06dd-487b-b6ed-a7012e303005\",\"DatasourceId\":\"c89b27d1-694b-4a25-94bd-9bca9b432279\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"cc8882f3-06dd-487b-b6ed-a7012e303005\",\"DatasourceId\":\"ab346171-64d9-4086-90be-2381316e1035\"}"
+    }
+  ]
+}

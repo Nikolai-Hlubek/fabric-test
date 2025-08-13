@@ -1,0 +1,65 @@
+table 'Projektstatuswechsel xlsx'
+	lineageTag: 83c3a311-eb48-41cd-a4c8-8b8e9031fd58
+	sourceLineageTag: [dbo].[Projektstatuswechsel xlsx]
+
+	column Projekt
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cd6d2c21-3e0f-4765-a55d-e10e8d4ee0e9
+		sourceLineageTag: Projekt
+		summarizeBy: none
+		sourceColumn: Projekt
+
+		annotation SummarizationSetBy = Automatic
+
+	column Projektstatus
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 07f16fa4-5c53-4341-8964-03e7503d13bc
+		sourceLineageTag: Projektstatus
+		summarizeBy: none
+		sourceColumn: Projektstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Freier Projektstatus'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0ccdd368-9d56-4955-9144-ec9882dda559
+		sourceLineageTag: Freier Projektstatus
+		summarizeBy: none
+		sourceColumn: Freier Projektstatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Von
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 244bd4d7-cad4-4383-b2d1-873d2c07b3c0
+		sourceLineageTag: Von
+		summarizeBy: none
+		sourceColumn: Von
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bis
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fca25751-d49f-4f29-9ca2-55505ea8ecef
+		sourceLineageTag: Bis
+		summarizeBy: none
+		sourceColumn: Bis
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Projektstatuswechsel xlsx' = entity
+		mode: directLake
+		source
+			entityName: Projektstatuswechsel xlsx
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
