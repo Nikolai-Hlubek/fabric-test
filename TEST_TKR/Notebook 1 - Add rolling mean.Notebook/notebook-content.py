@@ -175,7 +175,7 @@ df_k.head(5)
 
 # CELL ********************
 
-# Export as new table
+# Export as new table. Because of reason!
 df_k.to_table("production_data_100k_running_mean", mode="overwrite")
 
 # METADATA ********************
